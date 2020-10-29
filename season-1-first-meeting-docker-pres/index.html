@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Pierwsze spotkanie, czyli ...</h2>
+					<h4>Plany + Wprowadzenie do Dockera</h4>
+					<aside class="notes">
+						P.S Włącz nagrywanie na zoomie (uwaga dla autor ;-))
+					</aside>
+				</section>
+				<section>
+					<h2>
+						O mnie
+					</h2>
+					<ul>
+						<li class="fragment fade-in-then-semi-out">programista webowy JS</li>
+						<li class="fragment fade-in-then-semi-out">członek teamu tworzącego 'Dzieje Khorinis'</li>
+						<li class="fragment fade-in-then-semi-out">współtwórca kompilatora Daedalus do gry Gothic</li>
+						<li class="fragment fade-in-then-semi-out">pasjonat automatyzacji</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Plany</h2>
+					<ul>
+						<li class="fragment fade-in-then-semi-out">Podstawy Docker'a</li>
+						<li class="fragment fade-in-then-semi-out">Zaawansowany Docker + Docker Compose (coś więcej niż podstawy :-))</li>
+						<li class="fragment fade-in-then-semi-out">Docker Swarm - wstęp do orkiestracji</li>
+						<li class="fragment fade-in-then-semi-out">Kubernates - Podstawy</li>
+						<li class="fragment fade-in-then-semi-out">Mikroserwisy</li>
+						<li class="fragment fade-in-then-semi-out">CI/CD na podstawie Github Actions/CircleCI</li>
+						<li class="fragment fade-in-then-semi-out">... inne</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Czekamy na Ciebie!</h2>
+					<ul>
+						<li>jeżeli ktoś czuje się na siłach to zapraszam do prezentowania :-)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Dlaczego powstał Docker?</h3><br/>
+					<div>Wcześniej:</div><br/>
+					<ul>
+						<li class="fragment fade-in-then-semi-out">DevOps musiał znać dobrze różne technologie</li>
+						<li class="fragment fade-in-then-semi-out">U mnie działa!</li>
+						<li class="fragment fade-in-then-semi-out">Nowy dev spędzał dzień na stawianiu apki</li>
+						<li class="fragment fade-in-then-semi-out">Na serwerze produkcyjnym musiał być git :-(</li>
+					</ul>
+<!--					<aside class="notes">-->
+<!--						Pokaż-->
+<!--					</aside>-->
+				</section>
+				<section>
+					<h3>Czym jest Docker?</h3>
+					<img src="docker-architecture.png">
+				</section>
+				<section>
+					<h4>Vagrant - popularny do 2015</h4>
+					<img width="700px" src="vagrant_virtualbox.png">
+					<aside class="notes">
+						Opowiedzieć o stażu w skygate i vagrancie
+					</aside>
+				</section>
+				<section>
+					<h3>Vagrant vs Docker</h3>
+					<img width="800px" src="comparefeat-dock-vagrant.png">
+				</section>
+				<section>
+					<h3>Co możn uruchomić na Dockerz'e?</h3>
+					<img width="450px" src="Zrzut%20ekranu%202020-10-26%20o%2019.20.51.png">
+				</section>
+				<section>
+					<h3>Praktyka - Redis</h3>
+					<div>Klient poprosił nas o stworzenie aplikacji w NodeJS która będzie łączyła się z Redisem (usługa służącą do cachowania). Za każdym razem będzie ona inkrementowła wartość klucza o nazwie 'test'. Redis powinien działać na dockerze</div>
+				</section>
+				<section>
+					<h3>Praktyka - Nginx</h3>
+					<div>Dr. Żabka poprosił nas o postawienie jego statycznej strony www za pomocą serwera nginx. Nginx powinien działać na dockerze.</div>
+				</section>
+				<section>
+					<h3>Praktyka - Własny Dockerfile</h3>
+					<div>Klient poprosił nas o przerobienie aplikacji nr. 1 by z poziomu aplikacji www dało się zmieniać stan klucza 'test' w redisies</div>
+				</section>
+				<section>
+					<h3>Praktyka - Mongo</h3>
+					<div>Klient poprosił nas o postawienie instancji bazy mongo. Nie może on być dostępna na żadnym porcie maszyny hostowej. Dostęp do bazy powinien być możliwy tylko z poziomu klienta webowego. Baza powinna mieć nazwę "produkcja", powinna zawierać dwie kolekcje: users oraz media.</div>
+				</section>
+				<section>
+					<h3>Praktyka - NodeJS 2 wersje</h3>
+					<div>Klient poprisił nas o stworzenie kontenerów gdzie będą na każdym 2 inne wersje. Na jednym wersja 12, na innym 4</div>
+				</section>
+				<section>
+					<h3>Extra Praktyka - Postgres SQL</h3>
+					<div>
+						Klient poprosił nas o instancję postgresa która będzie używała wolumina. Dzięki temu po restarcie kontenera klient nie straci danych.
+					</div>
+				</section>
+				<section>
+					<h2>Zadania do realizacji</h2>
+					<ul>
+						<li>Postaw instancję mysql</li>
+						<li>Zaloguj się do kontenera i stwórz instancję bazy</li>
+						<li>Spróbuj połączyć się do kontenera za pomocą Mysql Workbench</li>
+						<li>Stwórz Dockerfile z webową aplikacją hello world w Twoim ulubionym języku</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Problemy?</h2>
+					<div>Jeżeli macie problemy z zadaniami lub chcecie by ktoś na nie spojrzał proszę o tworzenie postów na grupie n FB lub proszę o kontakt priv na FB.</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
